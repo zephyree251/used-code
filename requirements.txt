@@ -1,0 +1,10 @@
+# 光网络 OODA 自治系统依赖
+pandas>=2.0
+networkx>=3.0
+numpy>=1.24
+matplotlib>=3.7
+scipy>=1.10
+torch>=2.8
+
+# 可选：使用 Qwen 大模型做意图解析时安装
+# dashscope>=1.14

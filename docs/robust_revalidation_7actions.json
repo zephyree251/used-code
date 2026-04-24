@@ -1,0 +1,400 @@
+{
+  "config": {
+    "train_episodes": 120,
+    "eval_episodes": 30,
+    "sample_size": 15,
+    "seeds": [
+      42,
+      52,
+      62,
+      72,
+      82
+    ],
+    "policies": [
+      "rule",
+      "rl",
+      "dqn"
+    ],
+    "note": "DQN is 7-action parameterized scheme with latest constrained reward tuning"
+  },
+  "per_seed": {
+    "42": {
+      "rule": {
+        "episodes": 30.0,
+        "risk_before": 6.733333333333333,
+        "risk_after": 6.5,
+        "risk_repair_rate": 0.03465346534653466,
+        "congestion_before": 1.7666666666666666,
+        "congestion_after": 1.2,
+        "low_qot_before": 4.966666666666667,
+        "low_qot_after": 5.3,
+        "avg_osnr_after": 35.0308,
+        "avg_reroute_actions": 1.2666666666666666,
+        "avg_boost_actions": 4.966666666666667,
+        "avg_path_length": 204.11912087912089,
+        "max_link_utilization": 1.1194284333333333,
+        "control_messages": 14.733333333333333
+      },
+      "rl": {
+        "episodes": 30.0,
+        "risk_before": 6.833333333333333,
+        "risk_after": 6.066666666666666,
+        "risk_repair_rate": 0.11219512195121951,
+        "congestion_before": 1.7666666666666666,
+        "congestion_after": 1.2666666666666666,
+        "low_qot_before": 5.066666666666666,
+        "low_qot_after": 4.8,
+        "avg_osnr_after": 35.539,
+        "avg_reroute_actions": 3.8333333333333335,
+        "avg_boost_actions": 2.5,
+        "avg_path_length": 207.4612918192918,
+        "max_link_utilization": 1.1159321,
+        "control_messages": 17.5
+      },
+      "dqn": {
+        "episodes": 30.0,
+        "risk_before": 6.633333333333334,
+        "risk_after": 5.9,
+        "risk_repair_rate": 0.11055276381909548,
+        "congestion_before": 1.7666666666666666,
+        "congestion_after": 1.2666666666666666,
+        "low_qot_before": 4.866666666666666,
+        "low_qot_after": 4.633333333333334,
+        "avg_osnr_after": 35.806222222222225,
+        "avg_reroute_actions": 4.233333333333333,
+        "avg_boost_actions": 1.9,
+        "avg_path_length": 210.1574358974359,
+        "max_link_utilization": 1.1159321,
+        "control_messages": 17.5
+      }
+    },
+    "52": {
+      "rule": {
+        "episodes": 30.0,
+        "risk_before": 5.866666666666666,
+        "risk_after": 5.733333333333333,
+        "risk_repair_rate": 0.022727272727272648,
+        "congestion_before": 1.8,
+        "congestion_after": 1.1666666666666667,
+        "low_qot_before": 4.066666666666666,
+        "low_qot_after": 4.566666666666666,
+        "avg_osnr_after": 36.040533333333336,
+        "avg_reroute_actions": 1.2333333333333334,
+        "avg_boost_actions": 4.066666666666666,
+        "avg_path_length": 195.80438172938173,
+        "max_link_utilization": 1.0818407833333332,
+        "control_messages": 12.966666666666667
+      },
+      "rl": {
+        "episodes": 30.0,
+        "risk_before": 6.0,
+        "risk_after": 5.466666666666667,
+        "risk_repair_rate": 0.08888888888888886,
+        "congestion_before": 1.8,
+        "congestion_after": 1.1666666666666667,
+        "low_qot_before": 4.2,
+        "low_qot_after": 4.3,
+        "avg_osnr_after": 36.418866666666666,
+        "avg_reroute_actions": 3.2333333333333334,
+        "avg_boost_actions": 2.2,
+        "avg_path_length": 198.78941713841715,
+        "max_link_utilization": 1.0760907833333333,
+        "control_messages": 15.233333333333333
+      },
+      "dqn": {
+        "episodes": 30.0,
+        "risk_before": 5.9,
+        "risk_after": 5.466666666666667,
+        "risk_repair_rate": 0.07344632768361585,
+        "congestion_before": 1.8,
+        "congestion_after": 1.1333333333333333,
+        "low_qot_before": 4.1,
+        "low_qot_after": 4.333333333333333,
+        "avg_osnr_after": 36.4912,
+        "avg_reroute_actions": 3.2666666666666666,
+        "avg_boost_actions": 1.9666666666666666,
+        "avg_path_length": 200.6868020868021,
+        "max_link_utilization": 1.0760907833333333,
+        "control_messages": 15.066666666666666
+      }
+    },
+    "62": {
+      "rule": {
+        "episodes": 30.0,
+        "risk_before": 6.2,
+        "risk_after": 6.066666666666666,
+        "risk_repair_rate": 0.02150537634408609,
+        "congestion_before": 2.1,
+        "congestion_after": 1.4,
+        "low_qot_before": 4.1,
+        "low_qot_after": 4.666666666666667,
+        "avg_osnr_after": 36.760577777777776,
+        "avg_reroute_actions": 1.1666666666666667,
+        "avg_boost_actions": 4.1,
+        "avg_path_length": 189.40589377289376,
+        "max_link_utilization": 1.2106835666666667,
+        "control_messages": 13.566666666666666
+      },
+      "rl": {
+        "episodes": 30.0,
+        "risk_before": 6.233333333333333,
+        "risk_after": 5.3,
+        "risk_repair_rate": 0.14973262032085566,
+        "congestion_before": 2.1,
+        "congestion_after": 1.4,
+        "low_qot_before": 4.133333333333334,
+        "low_qot_after": 3.9,
+        "avg_osnr_after": 37.206355555555554,
+        "avg_reroute_actions": 3.2666666666666666,
+        "avg_boost_actions": 2.033333333333333,
+        "avg_path_length": 191.3209768009768,
+        "max_link_utilization": 1.2106835666666667,
+        "control_messages": 15.733333333333333
+      },
+      "dqn": {
+        "episodes": 30.0,
+        "risk_before": 6.133333333333334,
+        "risk_after": 5.3,
+        "risk_repair_rate": 0.13586956521739138,
+        "congestion_before": 2.1,
+        "congestion_after": 1.4,
+        "low_qot_before": 4.033333333333333,
+        "low_qot_after": 3.9,
+        "avg_osnr_after": 37.278977777777776,
+        "avg_reroute_actions": 2.933333333333333,
+        "avg_boost_actions": 3.2,
+        "avg_path_length": 191.24565079365078,
+        "max_link_utilization": 1.2408380666666665,
+        "control_messages": 15.2
+      }
+    },
+    "72": {
+      "rule": {
+        "episodes": 30.0,
+        "risk_before": 7.3,
+        "risk_after": 7.066666666666666,
+        "risk_repair_rate": 0.031963470319634715,
+        "congestion_before": 2.0,
+        "congestion_after": 1.2333333333333334,
+        "low_qot_before": 5.3,
+        "low_qot_after": 5.833333333333333,
+        "avg_osnr_after": 34.08626666666667,
+        "avg_reroute_actions": 1.4,
+        "avg_boost_actions": 5.3,
+        "avg_path_length": 213.42682417582418,
+        "max_link_utilization": 0.9214384666666666,
+        "control_messages": 16.0
+      },
+      "rl": {
+        "episodes": 30.0,
+        "risk_before": 7.266666666666667,
+        "risk_after": 6.6,
+        "risk_repair_rate": 0.09174311926605509,
+        "congestion_before": 2.0,
+        "congestion_after": 1.3333333333333333,
+        "low_qot_before": 5.266666666666667,
+        "low_qot_after": 5.266666666666667,
+        "avg_osnr_after": 34.59697777777778,
+        "avg_reroute_actions": 3.8666666666666667,
+        "avg_boost_actions": 2.8,
+        "avg_path_length": 215.65790537240537,
+        "max_link_utilization": 0.9149212166666666,
+        "control_messages": 18.4
+      },
+      "dqn": {
+        "episodes": 30.0,
+        "risk_before": 7.233333333333333,
+        "risk_after": 5.966666666666667,
+        "risk_repair_rate": 0.17511520737327188,
+        "congestion_before": 2.0,
+        "congestion_after": 1.4333333333333333,
+        "low_qot_before": 5.233333333333333,
+        "low_qot_after": 4.533333333333333,
+        "avg_osnr_after": 35.13451111111111,
+        "avg_reroute_actions": 5.033333333333333,
+        "avg_boost_actions": 1.8333333333333333,
+        "avg_path_length": 218.41989072039073,
+        "max_link_utilization": 0.9400844333333332,
+        "control_messages": 19.5
+      }
+    },
+    "82": {
+      "rule": {
+        "episodes": 30.0,
+        "risk_before": 6.1,
+        "risk_after": 5.866666666666666,
+        "risk_repair_rate": 0.038251366120218594,
+        "congestion_before": 2.066666666666667,
+        "congestion_after": 1.4333333333333333,
+        "low_qot_before": 4.033333333333333,
+        "low_qot_after": 4.433333333333334,
+        "avg_osnr_after": 36.20871111111111,
+        "avg_reroute_actions": 1.2,
+        "avg_boost_actions": 4.033333333333333,
+        "avg_path_length": 189.03354545454545,
+        "max_link_utilization": 1.3867783999999999,
+        "control_messages": 13.4
+      },
+      "rl": {
+        "episodes": 30.0,
+        "risk_before": 6.233333333333333,
+        "risk_after": 6.0,
+        "risk_repair_rate": 0.037433155080213915,
+        "congestion_before": 2.066666666666667,
+        "congestion_after": 1.4333333333333333,
+        "low_qot_before": 4.166666666666667,
+        "low_qot_after": 4.566666666666666,
+        "avg_osnr_after": 36.22368888888889,
+        "avg_reroute_actions": 1.2,
+        "avg_boost_actions": 4.166666666666667,
+        "avg_path_length": 189.03354545454545,
+        "max_link_utilization": 1.3867783999999999,
+        "control_messages": 13.666666666666666
+      },
+      "dqn": {
+        "episodes": 30.0,
+        "risk_before": 6.233333333333333,
+        "risk_after": 5.266666666666667,
+        "risk_repair_rate": 0.15508021390374332,
+        "congestion_before": 2.066666666666667,
+        "congestion_after": 1.4,
+        "low_qot_before": 4.166666666666667,
+        "low_qot_after": 3.8666666666666667,
+        "avg_osnr_after": 36.8584,
+        "avg_reroute_actions": 4.033333333333333,
+        "avg_boost_actions": 2.1666666666666665,
+        "avg_path_length": 195.26934004884004,
+        "max_link_utilization": 1.4190436499999999,
+        "control_messages": 16.5
+      }
+    }
+  },
+  "summary": {
+    "rule": {
+      "risk_repair_rate": {
+        "mean": 0.02982019017154934,
+        "std": 0.006610363582200662
+      },
+      "risk_after": {
+        "mean": 6.246666666666666,
+        "std": 0.4851574772976067
+      },
+      "congestion_after": {
+        "mean": 1.2866666666666666,
+        "std": 0.10873004286866723
+      },
+      "low_qot_after": {
+        "mean": 4.96,
+        "std": 0.5284778982028375
+      },
+      "avg_osnr_after": {
+        "mean": 35.62537777777778,
+        "std": 0.9511778697235604
+      },
+      "avg_reroute_actions": {
+        "mean": 1.2533333333333334,
+        "std": 0.08055363982396377
+      },
+      "avg_boost_actions": {
+        "mean": 4.493333333333333,
+        "std": 0.5334999739664682
+      },
+      "avg_path_length": {
+        "mean": 198.3579532023532,
+        "std": 9.315219810165228
+      },
+      "max_link_utilization": {
+        "mean": 1.14403393,
+        "std": 0.15322480872135277
+      },
+      "control_messages": {
+        "mean": 14.133333333333333,
+        "std": 1.1013123484683573
+      }
+    },
+    "rl": {
+      "risk_repair_rate": {
+        "mean": 0.09599858110144661,
+        "std": 0.03646434069106313
+      },
+      "risk_after": {
+        "mean": 5.886666666666667,
+        "std": 0.4636090306856988
+      },
+      "congestion_after": {
+        "mean": 1.32,
+        "std": 0.0956846672960488
+      },
+      "low_qot_after": {
+        "mean": 4.566666666666666,
+        "std": 0.46043457732885357
+      },
+      "avg_osnr_after": {
+        "mean": 35.99697777777778,
+        "std": 0.8788317719325023
+      },
+      "avg_reroute_actions": {
+        "mean": 3.08,
+        "std": 0.9776616092607003
+      },
+      "avg_boost_actions": {
+        "mean": 2.74,
+        "std": 0.7599415182177582
+      },
+      "avg_path_length": {
+        "mean": 200.4526273171273,
+        "std": 9.968656867143578
+      },
+      "max_link_utilization": {
+        "mean": 1.1408812133333333,
+        "std": 0.15570226273934326
+      },
+      "control_messages": {
+        "mean": 16.106666666666666,
+        "std": 1.676689860674564
+      }
+    },
+    "dqn": {
+      "risk_repair_rate": {
+        "mean": 0.13001281559942357,
+        "std": 0.03542700350856377
+      },
+      "risk_after": {
+        "mean": 5.58,
+        "std": 0.29709706606876274
+      },
+      "congestion_after": {
+        "mean": 1.3266666666666667,
+        "std": 0.11234866364235144
+      },
+      "low_qot_after": {
+        "mean": 4.253333333333333,
+        "std": 0.3173501396109842
+      },
+      "avg_osnr_after": {
+        "mean": 36.31386222222222,
+        "std": 0.7626251408534396
+      },
+      "avg_reroute_actions": {
+        "mean": 3.9,
+        "std": 0.7414700113812951
+      },
+      "avg_boost_actions": {
+        "mean": 2.2133333333333334,
+        "std": 0.505788713023751
+      },
+      "avg_path_length": {
+        "mean": 203.1558239094239,
+        "std": 9.921282438594817
+      },
+      "max_link_utilization": {
+        "mean": 1.1583978066666667,
+        "std": 0.1618463242861479
+      },
+      "control_messages": {
+        "mean": 16.753333333333334,
+        "std": 1.6385088071509142
+      }
+    }
+  }
+}

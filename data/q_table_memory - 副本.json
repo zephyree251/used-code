@@ -1,0 +1,22 @@
+{
+  "Core_VIP,Low_QoT": [
+    -6.526,
+    10.0,
+    -100.0
+  ],
+  "Access_Aggregation,Low_QoT": [
+    -6.94,
+    10.0,
+    6.99
+  ],
+  "Core_VIP,High_Congestion": [
+    -10.0,
+    -20.0,
+    32.82429536481
+  ],
+  "Access_Aggregation,High_Congestion": [
+    -10.0,
+    -20.0,
+    32.541865828329
+  ]
+}

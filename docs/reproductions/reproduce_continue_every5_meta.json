@@ -1,0 +1,20 @@
+{
+  "run_tag": "reproduce_continue_every5",
+  "generated_at": "2026-04-24T22:56:51.517880",
+  "config": {
+    "train_seed": 2025,
+    "eval_seed": 2026,
+    "sample_size": 15,
+    "max_train_episodes": 100,
+    "eval_interval": 5,
+    "eval_episodes": 30,
+    "min_delta": 0.005,
+    "patience_evals": 16,
+    "load_existing": false,
+    "note": "Reproduce historical continue-like curve with isolated outputs; eval every 5 episodes"
+  },
+  "stop_episode": 100,
+  "best_risk_repair_rate": 0.16596560846560846,
+  "csv_path": "docs/reproductions/reproduce_continue_every5.csv",
+  "plot_path": "output_images/training_plots_latest/reproduce_continue_every5.png"
+}

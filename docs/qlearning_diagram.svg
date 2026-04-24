@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 三角收紧；闭环接 Q 表底边中点 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#153a6b"/>
+    </marker>
+    <marker id="af" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#3949ab"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="1200" fill="#f4f8fc"/>
+  <g transform="translate(10, 210)">
+  <text x="590" y="38" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" fill="#0c2461">Q-learning &#22312;&#26412;&#31995;&#32479;&#20013;&#30340;&#20316;&#29992;&#19982;&#27969;&#31243;</text>
+
+  <rect x="72" y="118" width="168" height="78" rx="8" fill="#e8f0fa" stroke="#153a6b" stroke-width="1.8"/>
+  <text x="156" y="152" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#0c2461">&#24863;&#30693;/&#24847;&#22270;/&#35777;&#25454;</text>
+  <text x="156" y="178" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#2e4a7a">&#26234;&#33021;&#20307;</text>
+  <line x1="240" y1="157" x2="278" y2="157" stroke="#153a6b" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 决策 -->
+  <rect x="278" y="72" width="760" height="228" rx="14" fill="none" stroke="#2e5c8a" stroke-width="2.2" stroke-dasharray="8 5"/>
+  <text x="658" y="102" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="600" fill="#0c2461">&#20915;&#31574;&#26234;&#33021;&#20307;</text>
+  <text x="658" y="128" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#1e3a5f">&#24402;&#32435;&#29366;&#24577;&#12289;Q &#34920;&#12289;&#36873;&#21160;&#20316;&#8594;decisions</text>
+
+  <rect x="310" y="148" width="168" height="92" rx="8" fill="#e8f0fa" stroke="#153a6b" stroke-width="1.3"/>
+  <text x="394" y="182" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#0c2461">&#29366;&#24577; s</text>
+  <text x="394" y="212" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2e4a7a">&#31561;&#32423;+&#25925;&#38556;</text>
+
+  <line x1="478" y1="194" x2="502" y2="194" stroke="#153a6b" stroke-width="1.8" marker-end="url(#a)"/>
+
+  <rect x="502" y="142" width="216" height="104" rx="8" fill="#d8e4f5" stroke="#153a6b" stroke-width="1.3"/>
+  <text x="610" y="170" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#0c2461">Q &#34920;</text>
+  <text x="540" y="198" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1a3a6b">&#20445;&#25345;</text>
+  <text x="610" y="198" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1a3a6b">&#35843;&#21151;</text>
+  <text x="680" y="198" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1a3a6b">&#37325;&#36335;&#30001;</text>
+  <text x="540" y="228" font-family="Consolas, monospace" font-size="15" fill="#0c2461">Q1</text>
+  <text x="610" y="228" font-family="Consolas, monospace" font-size="15" fill="#0c2461">Q2</text>
+  <text x="680" y="228" font-family="Consolas, monospace" font-size="15" fill="#0c2461">Q3</text>
+
+  <line x1="718" y1="194" x2="742" y2="194" stroke="#153a6b" stroke-width="1.8" marker-end="url(#a)"/>
+
+  <rect x="742" y="148" width="168" height="92" rx="8" fill="#e8f0fa" stroke="#153a6b" stroke-width="1.3"/>
+  <text x="826" y="182" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#0c2461">&#36873;&#21160;&#20316; a</text>
+  <text x="826" y="212" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#2e4a7a">maxQ/&#38543;&#26426;</text>
+  <text x="826" y="232" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#555">&#8594;decisions</text>
+
+  <!-- Q 表底边中点（用于闭环箭头落点）：(610, 246) -->
+
+  <!-- 决策底边中点 -> 执行（右下，收紧） -->
+  <line x1="658" y1="300" x2="880" y2="378" stroke="#153a6b" stroke-width="2.2" marker-end="url(#a)"/>
+  <text x="820" y="330" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#3d5a8a">decisions</text>
+
+  <!-- 执行 右下 -->
+  <rect x="740" y="378" width="300" height="100" rx="10" fill="#e8f0fa" stroke="#153a6b" stroke-width="1.8"/>
+  <text x="890" y="412" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="600" fill="#0c2461">&#25191;&#34892;&#26234;&#33021;&#20307;</text>
+  <text x="890" y="444" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#2e4a7a">&#25353;&#25351;&#20196;&#25805;&#20316;&#32593;&#32476;</text>
+
+  <line x1="740" y1="428" x2="520" y2="428" stroke="#153a6b" stroke-width="2.2" marker-end="url(#a)"/>
+  <text x="630" y="418" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#3d5a8a">&#25191;&#34892;&#21518;&#35780;&#20272;</text>
+
+  <!-- 评估 左下 -->
+  <rect x="140" y="378" width="380" height="168" rx="10" fill="#dce8f5" stroke="#153a6b" stroke-width="1.8"/>
+  <text x="330" y="412" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="600" fill="#0c2461">&#35780;&#20272;&#65288;&#21547; Q &#23398;&#20064;&#65289;</text>
+  <text x="330" y="446" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1e3a5f">&#183; &#22870;&#21169; r</text>
+  <text x="330" y="474" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1e3a5f">&#183; learn() &#26356;&#26032; Q(s,a)</text>
+  <text x="330" y="508" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#0c2461">Q &#8592; Q + &#945;&#183;(r-Q)</text>
+  <text x="330" y="534" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#3d5a8a">&#26356;&#26032;&#20379;&#19979;&#36718;</text>
+
+  <!-- 闭环：自评估框顶边中点 -> Q 表底边中点（从下侧接入） -->
+  <path d="M 330 378 C 300 320 420 255 610 246" fill="none" stroke="#3949ab" stroke-width="2.5" stroke-dasharray="8 5" marker-end="url(#af)"/>
+  <text x="400" y="310" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#283593">&#38381;&#29615;</text>
+  </g>
+</svg>

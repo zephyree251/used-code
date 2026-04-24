@@ -1,0 +1,26 @@
+[
+  {
+    "id": "KB-ONG-001",
+    "topic": "Physical_Layer_Optimization",
+    "keywords": ["OSNR", "QoT", "BER", "Power", "Physical"],
+    "content": "[ONG论文策略] 当检测到光信噪比(OSNR)劣化时，推荐的动作优先级为：1. 调整发射功率 (Power Adjustment) 以抵消衰减；2. 如果功率已达上限，则降低调制格式阶数 (如 16QAM -> QPSK)；3. 作为最后手段，触发重路由 (Rerouting)。"
+  },
+  {
+    "id": "KB-ONG-002",
+    "topic": "Congestion_Control",
+    "keywords": ["Congestion", "Utilization", "Traffic", "Blocking"],
+    "content": "[ONG论文策略] 针对链路拥塞，建议采用基于负载均衡的路由算法 (LB-R)。优先寻找跳数稍多但剩余频谱资源丰富的路径，避免在最短路径上发生资源争抢。"
+  },
+  {
+    "id": "KB-TEFNET-001",
+    "topic": "Core_Protection",
+    "keywords": ["Core_VIP", "HL1", "HL2", "Protection"],
+    "content": "[TEFNET运维规范] (高危警告) 对于 Core_VIP 级别的骨干业务，任何导致业务中断的操作(如硬切换)都是被禁止的。建议优先使用 '软调整' (如增益微调)。如果必须重路由，必须遵循 Make-before-Break (先通后断) 协议。"
+  },
+  {
+    "id": "KB-TEFNET-002",
+    "topic": "Access_Cost",
+    "keywords": ["Access_Cost", "Metro_Std", "Cost"],
+    "content": "[TEFNET运维规范] 对于接入层普通业务，成本是首要考量。允许进行服务降级 (Service Downgrade) 或排队等待，不建议占用昂贵的骨干保护资源。"
+  }
+]
