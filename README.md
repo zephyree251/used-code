@@ -1,80 +1,74 @@
-# 多智能体光网络自治系统 (OODA)
+# 多智能体光网络自治系统（OODA + 轻量RL）
 
-基于 **OODA 环**（Observe–Orient–Decide–Act）的多智能体光网络自治运维系统。系统对光网络进行「感知 → 理解 → 决策 → 执行 → 评估」的闭环管理，自动发现风险（低 OSNR、拥塞等）并执行修复动作（功率调节、重路由），决策层采用 **Q-Learning 强化学习**。
+本项目实现了一个面向光网络风险处置的多智能体闭环控制系统，流程为：
 
----
+`Perception -> Intent -> Evidence -> Decision -> Action -> Evaluation`
 
-## 功能概览
+系统聚焦两类风险：
+- `Low_QoT`（低信号质量，OSNR不足）
+- `High_Congestion`（链路拥塞）
 
-- **感知层 (Perception)**：基于 TEFNET 拓扑与流量矩阵，计算光路 OSNR、统计链路负载，识别低 OSNR 与拥塞风险。
-- **意图层 (Intent)**：将风险报告转化为结构化意图（业务等级、问题类型、优化目标）。支持 **Qwen 大模型** 语义解析，未配置时自动使用规则引擎兜底。
-- **证据层 (Evidence)**：从本地知识库 (RAG) 检索与意图相关的 SOP 规则，为决策提供依据。
-- **决策层 (Decision)**：支持四类高层动作决策器：**规则法 / Q-Learning / 轻量 DQN / VDN-lite 价值分解**。默认使用轻量 DQN，根据低维光网络特征选择 **保持 / 调功率 / 重路由**。
-- **执行层 (Action)**：执行功率提升或业务重路由（含拓扑剪枝、K-最短路径、物理指标重算）。
-- **评估层 (Evaluation)**：根据执行结果计算奖励，更新 Q 表，形成闭环学习。
+决策层支持 `Rule / Q-Learning / DQN / VDN-lite`，当前论文主线为 `Rule / Q-Learning / DQN(7动作参数化)`。
 
 ---
 
-## 项目结构
+## 当前版本要点
 
-```
+- 决策状态：8维连续特征（见 `docs/decision_state_8d_features.md`）
+- DQN动作：7个参数化动作
+  - `Action_Maintain`
+  - `Action_Power_Boost_1p0dB / 2p0dB / 3p0dB`
+  - `Action_Reroute_K1 / K3 / K5`
+- 奖励机制：基于执行前后KPI变化（OSNR、利用率、路径代价、动作成本）的连续奖励
+- 实验框架：主对照、负载分层、消融、训练曲线与复现实验
+
+---
+
+## 目录结构（核心）
+
+```text
 code/
-├── main.py                 # 入口：组装 OODA 流水线并运行一轮
-├── requirements.txt        # Python 依赖
-├── README.md
-├── OPTIMIZATION.md          # 优化建议与已做修改说明
-├── core/
-│   └── context.py          # 系统上下文 SystemContext、BaseAgent 基类
+├── main.py
 ├── agents/
-│   ├── perception.py      # Step 1: 态势感知
-│   ├── intent.py           # Step 2: 意图解析 (Qwen / 规则兜底)
-│   ├── evidence.py        # Step 3: 证据检索 (RAG)
-│   ├── decision_rl.py     # Step 4: RL 决策
-│   ├── action.py           # Step 5: 动作执行
-│   └── evaluation.py      # Step 6: 评估与 Q 表更新
-├── utils/
-│   ├── tefnet_loader.py    # 拓扑与流量数据加载
-│   └── visualizer.py      # 重路由等可视化
-└── data/
-    ├── tefnet_nodes.csv    # 节点数据
-    ├── tefnet_links.csv    # 链路数据
-    ├── tefnet_traffic.csv  # 流量需求矩阵
-    ├── knowledge_base.json # 专家规则知识库
-    └── q_table_memory.json  # (可选) RL Q 表持久化
+│   ├── perception.py
+│   ├── intent.py
+│   ├── evidence.py
+│   ├── decision_rl.py
+│   ├── action.py
+│   └── evaluation.py
+├── benchmark_focus.py
+├── benchmark_load_levels.py
+├── benchmark_ablation.py
+├── train_dqn_until_stable.py
+├── train_dqn_dense_curves.py
+├── plot_dqn_dense_smoothed.py
+├── docs/
+│   ├── latest_benchmark_results.md
+│   ├── robust_revalidation_7actions.json
+│   ├── thesis_draft_main_body.md
+│   └── decision_state_8d_features.md
+└── output_images/
 ```
 
 ---
 
-## 环境要求
+## 快速开始
 
-- Python 3.8+
-- 见 `requirements.txt`
-
----
-
-## 安装与运行
-
-### 1. 克隆或进入项目目录
-
-```bash
-cd /path/to/code
-```
-
-### 2. 创建虚拟环境并安装依赖
+### 1) 安装依赖
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. 运行主流程
+### 2) 运行单轮闭环
 
 ```bash
 python main.py
 ```
 
-如需切换决策方式，可设置环境变量：
+可选模式：
 
 ```bash
 DECISION_MODE=rule python main.py
@@ -83,94 +77,57 @@ DECISION_MODE=dqn python main.py
 DECISION_MODE=vdn python main.py
 ```
 
-每轮会从全部业务中随机抽取 15 条作为当前活跃业务，依次执行 Perception → Intent → Evidence → Decision → Action → Evaluation，并在控制台输出风险报告、决策与修复日志；若有重路由，会触发可视化。
-
 ---
 
-## 配置说明
+## 实验命令
 
-### 可选：使用 Qwen 大模型做意图解析
-
-1. 安装 DashScope SDK：
-
-   ```bash
-   pip install dashscope
-   ```
-
-2. 设置环境变量（**不要将 API Key 写进代码**）：
-
-   ```bash
-   export DASHSCOPE_API_KEY=sk-你的密钥
-   export DASHSCOPE_MODEL=qwen-plus   # 可选，默认 qwen-plus
-   ```
-
-未配置或未安装 `dashscope` 时，系统会自动使用规则引擎生成意图，无需大模型即可运行。
-
-### 数据文件
-
-- 拓扑与流量：`data/tefnet_nodes.csv`、`data/tefnet_links.csv`、`data/tefnet_traffic.csv` 需存在且格式符合 `TefnetLoader` 约定。
-- 知识库：`data/knowledge_base.json` 缺失时证据层无法检索规则，决策仍可进行。
-- Q 表：`data/q_table_memory.json` 为 RL 存档，首次运行会自动生成；存在则会读档继续学习。
-
----
-
-## 输出说明
-
-- 控制台：各 Agent 的步骤说明、风险列表、决策动作、奖励与 Q 值更新、本轮修复报告。
-- 若发生重路由：`utils.visualizer` 会生成重路由相关图示（具体输出路径见 `visualizer.py`）。
-
----
-
-## 论文对照实验（聚焦版本）
-
-为响应“聚焦具体网络算法”的要求，项目提供了一个可直接用于论文结果表的对照脚本：
+### 主对照实验（推荐）
 
 ```bash
 python benchmark_focus.py
 ```
 
-脚本会在同一批业务样本下比较：
-
-- Rule Baseline（固定规则决策）
-- Q-Learning Baseline（传统表格强化学习）
-- DQN Multi-Agent（轻量神经网络决策）
-- VDN-lite Multi-Agent（路由/功率双智能体价值分解）
-
-并输出关键指标（可直接写入实验章节）：
-
-- 执行前/后风险数 (`risk_before`, `risk_after`)
-- 风险修复率 (`risk_repair_rate`)
-- 拥塞/低 QoT 风险变化
-- 平均 OSNR、平均重路由次数、平均功率提升次数
-
-可选：运行负载分层实验（低/中/高负载）：
+### 负载分层实验
 
 ```bash
 python benchmark_load_levels.py
+python plot_load_level_results.py
 ```
 
-可选：运行 DQN 消融实验（Replay/Target 与探索策略）：
+### DQN消融实验
 
 ```bash
 python benchmark_ablation.py
 ```
 
-可选：将负载分层结果画成论文图：
-
-```bash
-python plot_load_level_results.py
-```
-
-可选：持续训练 DQN 直到收益趋稳，并生成训练曲线：
+### 训练曲线
 
 ```bash
 python train_dqn_until_stable.py
+python train_dqn_dense_curves.py
+python plot_dqn_dense_smoothed.py
 ```
 
 ---
 
-## 其他说明
+## 结果与图表位置
 
-- 更多优化建议与已做修改（如 API Key 环境变量、意图兜底与动作名统一等）见 [OPTIMIZATION.md](OPTIMIZATION.md)。
-- 收口与论文交付建议见 [docs/final_scope_and_delivery.md](docs/final_scope_and_delivery.md)。
-- 实验与绘图脚本：`experiment_runner.py`、`draw_ooda_arch.py`、`draw_osnr_schematic_v2.py` 等可按需单独运行。
+- 结果汇总：`docs/latest_benchmark_results.md`
+- 稳健复验（5 seeds）：`docs/robust_revalidation_7actions.json`
+- 训练曲线数据：`docs/dqn_training_curve*.csv`
+- 训练图和整理图：`output_images/`、`output_images/_organized/`
+
+---
+
+## 当前结论（论文口径）
+
+- DQN(7动作)在平均修复能力与QoT指标上优于Q-Learning
+- 代价是控制开销略有上升，体现“性能-开销”权衡
+- 在高负载拥塞场景下，Q-Learning仍有稳定性优势
+
+---
+
+## 说明
+
+- `dashscope` 未配置时，Intent层自动使用规则兜底，不影响整体运行
+- 项目收口计划见 `docs/final_scope_and_delivery.md`
