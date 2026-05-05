@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <defs>
+    <style><![CDATA[
+      .title { font-family: Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #172033; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 22px; font-weight: 600; fill: #22324d; }
+      .text { font-family: Arial, sans-serif; font-size: 19px; fill: #24324a; }
+      .small { font-family: Arial, sans-serif; font-size: 17px; fill: #45546f; }
+      .box { rx: 20; ry: 20; stroke-width: 2; }
+      .arrow { stroke: #6a7894; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .flow { stroke: #2e77d0; stroke-width: 3.5; fill: none; marker-end: url(#bluearrow); }
+    ]]></style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto"><path d="M0,0 L12,4 L0,8 Z" fill="#6a7894"/></marker>
+    <marker id="bluearrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto"><path d="M0,0 L12,4 L0,8 Z" fill="#2e77d0"/></marker>
+  </defs>
+  <rect width="1400" height="820" fill="#f7f9fc"/>
+  <text x="700" y="60" text-anchor="middle" class="title">&#x5173;&#x952E;&#x95EE;&#x9898;&#x3001;&#x7814;&#x7A76;&#x5185;&#x5BB9;&#x4E0E;&#x6280;&#x672F;&#x8DEF;&#x7EBF;&#x5173;&#x7CFB;&#x56FE;</text>
+
+  <rect x="70" y="105" width="360" height="58" class="box" fill="#e9f0ff" stroke="#8aa9e6"/>
+  <text x="250" y="142" text-anchor="middle" class="subtitle">&#x5173;&#x952E;&#x95EE;&#x9898;</text>
+  <rect x="520" y="105" width="360" height="58" class="box" fill="#eaf8f0" stroke="#85c9a3"/>
+  <text x="700" y="142" text-anchor="middle" class="subtitle">&#x7814;&#x7A76;&#x5185;&#x5BB9;</text>
+  <rect x="970" y="105" width="360" height="58" class="box" fill="#fff4e6" stroke="#e0ae72"/>
+  <text x="1150" y="142" text-anchor="middle" class="subtitle">&#x6280;&#x672F;&#x8DEF;&#x7EBF;</text>
+
+  <rect x="70" y="200" width="360" height="88" class="box" fill="#fff" stroke="#c8d4ea"/>
+  <text x="95" y="235" class="text">&#x72B6;&#x6001;&#x8868;&#x8FBE;&#x4E0D;&#x8DB3;</text><text x="95" y="264" class="small">&#x7B80;&#x5355;&#x6807;&#x7B7E;&#x96BE;&#x4EE5;&#x523B;&#x753B;QoT&#x4E0E;&#x62E5;&#x585E;&#x72B6;&#x6001;</text>
+  <rect x="70" y="320" width="360" height="88" class="box" fill="#fff" stroke="#c8d4ea"/>
+  <text x="95" y="355" class="text">&#x63A7;&#x5236;&#x52A8;&#x4F5C;&#x7C92;&#x5EA6;&#x8F83;&#x7C97;</text><text x="95" y="384" class="small">&#x96BE;&#x4EE5;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x529F;&#x7387;&#x6863;&#x4F4D;&#x4E0E;&#x8DEF;&#x7531;&#x8303;&#x56F4;</text>
+  <rect x="70" y="440" width="360" height="88" class="box" fill="#fff" stroke="#c8d4ea"/>
+  <text x="95" y="475" class="text">&#x5956;&#x52B1;&#x53CD;&#x9988;&#x4E0D;&#x591F;&#x771F;&#x5B9E;</text><text x="95" y="504" class="small">&#x56FA;&#x5B9A;&#x52A8;&#x4F5C;&#x5206;&#x503C;&#x65E0;&#x6CD5;&#x53CD;&#x6620;&#x5B9E;&#x9645;&#x7F51;&#x7EDC;&#x6536;&#x76CA;</text>
+  <rect x="70" y="560" width="360" height="88" class="box" fill="#fff" stroke="#c8d4ea"/>
+  <text x="95" y="595" class="text">&#x5B9E;&#x9A8C;&#x7ED3;&#x8BBA;&#x7A33;&#x5B9A;&#x6027;&#x4E0D;&#x8DB3;</text><text x="95" y="624" class="small">&#x5355;&#x6B21;&#x968F;&#x673A;&#x5B9E;&#x9A8C;&#x96BE;&#x4EE5;&#x652F;&#x6491;&#x53EF;&#x9760;&#x7ED3;&#x8BBA;</text>
+
+  <rect x="520" y="200" width="360" height="88" class="box" fill="#fff" stroke="#b6dbc6"/>
+  <text x="545" y="235" class="text">8&#x7EF4;&#x72B6;&#x6001;&#x7279;&#x5F81;&#x8BBE;&#x8BA1;</text><text x="545" y="264" class="small">&#x4E1A;&#x52A1;&#x7B49;&#x7EA7;&#x3001;&#x98CE;&#x9669;&#x7C7B;&#x578B;&#x3001;OSNR&#x88D5;&#x91CF;&#x3001;&#x5229;&#x7528;&#x7387;&#x7B49;</text>
+  <rect x="520" y="320" width="360" height="88" class="box" fill="#fff" stroke="#b6dbc6"/>
+  <text x="545" y="355" class="text">7&#x7C7B;&#x53C2;&#x6570;&#x5316;&#x52A8;&#x4F5C;&#x7A7A;&#x95F4;</text><text x="545" y="384" class="small">&#x4FDD;&#x6301;&#x3001;3&#x6863;&#x529F;&#x7387;&#x63D0;&#x5347;&#x3001;3&#x6863;&#x91CD;&#x8DEF;&#x7531;</text>
+  <rect x="520" y="440" width="360" height="88" class="box" fill="#fff" stroke="#b6dbc6"/>
+  <text x="545" y="475" class="text">KPI&#x9A71;&#x52A8;&#x5956;&#x52B1;&#x51FD;&#x6570;</text><text x="545" y="504" class="small">&#x4F9D;&#x636E;OSNR&#x3001;&#x5229;&#x7528;&#x7387;&#x3001;&#x8DEF;&#x5F84;&#x4EE3;&#x4EF7;&#x53D8;&#x5316;&#x8BA1;&#x7B97;&#x5956;&#x52B1;</text>
+  <rect x="520" y="560" width="360" height="88" class="box" fill="#fff" stroke="#b6dbc6"/>
+  <text x="545" y="595" class="text">&#x591A;&#x7EC4;&#x5B9E;&#x9A8C;&#x9A8C;&#x8BC1;</text><text x="545" y="624" class="small">&#x4E3B;&#x5BF9;&#x7167;&#x3001;&#x8D1F;&#x8F7D;&#x5206;&#x5C42;&#x3001;&#x6D88;&#x878D;&#x3001;&#x591A;&#x968F;&#x673A;&#x79CD;&#x5B50;&#x590D;&#x9A8C;</text>
+
+  <rect x="970" y="200" width="360" height="88" class="box" fill="#fff" stroke="#e5c292"/>
+  <text x="995" y="235" class="text">Perception&#xFF1A;&#x7F51;&#x7EDC;&#x72B6;&#x6001;&#x611F;&#x77E5;</text><text x="995" y="264" class="small">&#x8BC6;&#x522B;Low_QoT&#x4E0E;High_Congestion&#x98CE;&#x9669;</text>
+  <rect x="970" y="320" width="360" height="88" class="box" fill="#fff" stroke="#e5c292"/>
+  <text x="995" y="355" class="text">Decision&#xFF1A;DQN&#x52A8;&#x4F5C;&#x9009;&#x62E9;</text><text x="995" y="384" class="small">&#x57FA;&#x4E8E;8&#x7EF4;&#x72B6;&#x6001;&#x8F93;&#x51FA;7&#x7C7B;&#x53C2;&#x6570;&#x5316;&#x52A8;&#x4F5C;</text>
+  <rect x="970" y="440" width="360" height="88" class="box" fill="#fff" stroke="#e5c292"/>
+  <text x="995" y="475" class="text">Action&#xFF1A;&#x63A7;&#x5236;&#x52A8;&#x4F5C;&#x6267;&#x884C;</text><text x="995" y="504" class="small">&#x6267;&#x884C;&#x529F;&#x7387;&#x63D0;&#x5347;&#x6216;K&#x5019;&#x9009;&#x91CD;&#x8DEF;&#x7531;</text>
+  <rect x="970" y="560" width="360" height="88" class="box" fill="#fff" stroke="#e5c292"/>
+  <text x="995" y="595" class="text">Evaluation&#xFF1A;&#x53CD;&#x9988;&#x5B66;&#x4E60;</text><text x="995" y="624" class="small">&#x6309;&#x6267;&#x884C;&#x524D;&#x540E;KPI&#x53D8;&#x5316;&#x66F4;&#x65B0;&#x7B56;&#x7565;</text>
+
+  <path d="M430 244 C470 244, 480 244, 520 244" class="arrow"/>
+  <path d="M430 364 C470 364, 480 364, 520 364" class="arrow"/>
+  <path d="M430 484 C470 484, 480 484, 520 484" class="arrow"/>
+  <path d="M430 604 C470 604, 480 604, 520 604" class="arrow"/>
+  <path d="M880 244 C920 244, 930 244, 970 244" class="arrow"/>
+  <path d="M880 364 C920 364, 930 364, 970 364" class="arrow"/>
+  <path d="M880 484 C920 484, 930 484, 970 484" class="arrow"/>
+  <path d="M880 604 C920 604, 930 604, 970 604" class="arrow"/>
+  <path d="M1150 288 L1150 320" class="flow"/>
+  <path d="M1150 408 L1150 440" class="flow"/>
+  <path d="M1150 528 L1150 560" class="flow"/>
+  <path d="M970 604 C910 700, 580 720, 520 604" class="flow"/>
+  <text x="700" y="735" text-anchor="middle" class="small">&#x95ED;&#x73AF;&#x53CD;&#x9988;&#xFF1A;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x53CD;&#x5411;&#x5F71;&#x54CD;&#x7B56;&#x7565;&#x66F4;&#x65B0;&#xFF0C;&#x652F;&#x6491;&#x98CE;&#x9669;&#x4FEE;&#x590D;&#x4E0E;QoT&#x4F18;&#x5316;</text>
+  <rect x="210" y="760" width="980" height="38" rx="19" ry="19" fill="#edf3fb" stroke="#d3deed"/>
+  <text x="700" y="785" text-anchor="middle" class="small">&#x76EE;&#x6807;&#xFF1A;&#x5728;&#x98CE;&#x9669;&#x4FEE;&#x590D;&#x7387;&#x3001;QoT&#x6027;&#x80FD;&#x4E0E;&#x63A7;&#x5236;&#x5F00;&#x9500;&#x4E4B;&#x95F4;&#x5F62;&#x6210;&#x53EF;&#x89E3;&#x91CA;&#x7684;&#x6743;&#x8861;</text>
+</svg>
